@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.8.1"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div>
+        County:<br>
+        <select name="county" id="county">
+            {% for county in counties %}
+            <option value="{{ county }}">{{ county.title() }}</option>
+            {% endfor %}
+        </select>
+        <br>
+    </div>
+
+    <div id="chart1-div"></div>
+    <div id="chart2-div"></div>
+    <div id="chart3-div"></div>
+
+    <br>
+    <a href="/help">HELP</a>
+
+    <script type="text/javascript">
+
+        var select = document.querySelector("select");
+        select.selectedIndex = 0;
+        select.addEventListener("change", function() { makeCharts(select.value) })
+
+        var makeCharts = (async function(county) {
+            var charts = {
+                "both": "#chart1-div",
+                "cumulative": "#chart2-div",
+                "reported": "#chart3-div"
+            };
+
+            for (var key in charts) {
+                var response = await fetch(key + "/" + county);
+                var spec = await response.json();
+                vegaEmbed(charts[key], spec).then(function(result) {}).catch(console.error);
+            }
+        });
+
+        makeCharts("all");
+    </script>
+</body>
+</html>

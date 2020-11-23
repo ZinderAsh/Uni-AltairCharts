@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module web_visualization</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>web_visualization</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a>web_visualization.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="https://altair-viz.github.io/">altair</a><br>
+</td><td width="25%" valign=top><a href="https://pandas.pydata.org/">pandas</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-get_county_file"><strong>get_county_file</strong></a>(county)</dt><dd><tt>Gets&nbsp;the&nbsp;filename&nbsp;for&nbsp;a&nbsp;csv&nbsp;file&nbsp;of&nbsp;corona&nbsp;statistic&nbsp;for&nbsp;a&nbsp;given&nbsp;county.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;county&nbsp;(string):&nbsp;Name&nbsp;of&nbsp;the&nbsp;county,&nbsp;case-insensitive.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(string):&nbsp;The&nbsp;filename&nbsp;of&nbsp;the&nbsp;county's&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><tt>Starts&nbsp;the&nbsp;Flask&nbsp;web&nbsp;page&nbsp;to&nbsp;view&nbsp;corona&nbsp;statistics.</tt></dd></dl>
+ <dl><dt><a name="-make_dataframe"><strong>make_dataframe</strong></a>(county='all', fromdate=None, todate=None)</dt><dd><tt>Creates&nbsp;a&nbsp;pandas&nbsp;dataframe&nbsp;on&nbsp;corona&nbsp;statistics&nbsp;based&nbsp;on&nbsp;county&nbsp;and&nbsp;min/max&nbsp;dates.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[county]&nbsp;(string):&nbsp;The&nbsp;county&nbsp;to&nbsp;use&nbsp;data&nbsp;from.&nbsp;Default:&nbsp;All&nbsp;counties<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[fromdate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;start&nbsp;data&nbsp;from&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;Start&nbsp;of&nbsp;statistics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[todate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;end&nbsp;data&nbsp;at&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;End&nbsp;of&nbsp;statistics<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Dataframe):&nbsp;Pandas&nbsp;dataframe&nbsp;with&nbsp;the&nbsp;requested&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-plot_both"><strong>plot_both</strong></a>(county='all', fromdate=None, todate=None)</dt><dd><tt>Creates&nbsp;an&nbsp;altair&nbsp;chart&nbsp;on&nbsp;corona&nbsp;statistics&nbsp;by&nbsp;cumulative&nbsp;and&nbsp;reported&nbsp;cases&nbsp;based&nbsp;on&nbsp;county&nbsp;and&nbsp;min/max&nbsp;dates.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[county]&nbsp;(string):&nbsp;The&nbsp;county&nbsp;to&nbsp;use&nbsp;data&nbsp;from.&nbsp;Default:&nbsp;All&nbsp;counties<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[fromdate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;start&nbsp;data&nbsp;from&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;Start&nbsp;of&nbsp;statistics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[todate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;end&nbsp;data&nbsp;at&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;End&nbsp;of&nbsp;statistics<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Chart):&nbsp;Layered&nbsp;altair&nbsp;bar&nbsp;&amp;&nbsp;line-chart&nbsp;with&nbsp;the&nbsp;requested&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-plot_cumulative_cases"><strong>plot_cumulative_cases</strong></a>(county='all', fromdate=None, todate=None)</dt><dd><tt>Creates&nbsp;an&nbsp;altair&nbsp;chart&nbsp;on&nbsp;corona&nbsp;statistics&nbsp;by&nbsp;cumulative&nbsp;cases&nbsp;based&nbsp;on&nbsp;county&nbsp;and&nbsp;min/max&nbsp;dates.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[county]&nbsp;(string):&nbsp;The&nbsp;county&nbsp;to&nbsp;use&nbsp;data&nbsp;from.&nbsp;Default:&nbsp;All&nbsp;counties<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[fromdate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;start&nbsp;data&nbsp;from&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;Start&nbsp;of&nbsp;statistics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[todate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;end&nbsp;data&nbsp;at&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;End&nbsp;of&nbsp;statistics<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Chart):&nbsp;Altair&nbsp;line-chart&nbsp;with&nbsp;the&nbsp;requested&nbsp;data.</tt></dd></dl>
+ <dl><dt><a name="-plot_reported_cases"><strong>plot_reported_cases</strong></a>(county='all', fromdate=None, todate=None)</dt><dd><tt>Creates&nbsp;an&nbsp;altair&nbsp;chart&nbsp;on&nbsp;corona&nbsp;statistics&nbsp;by&nbsp;new&nbsp;reported&nbsp;cases&nbsp;based&nbsp;on&nbsp;county&nbsp;and&nbsp;min/max&nbsp;dates.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[county]&nbsp;(string):&nbsp;The&nbsp;county&nbsp;to&nbsp;use&nbsp;data&nbsp;from.&nbsp;Default:&nbsp;All&nbsp;counties<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[fromdate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;start&nbsp;data&nbsp;from&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;Start&nbsp;of&nbsp;statistics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[todate]&nbsp;(string):&nbsp;The&nbsp;date&nbsp;to&nbsp;end&nbsp;data&nbsp;at&nbsp;in&nbsp;the&nbsp;format&nbsp;YYYY-MM-DD.&nbsp;Default:&nbsp;End&nbsp;of&nbsp;statistics<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(Chart):&nbsp;Altair&nbsp;bar-chart&nbsp;with&nbsp;the&nbsp;requested&nbsp;data.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>counties</strong> = {'agder': 'agder', 'all': 'alle_fylker', 'innlandet': 'innlandet', 'møre og romsdal': 'more_og_romsdal', 'nordland': 'nordland', 'oslo': 'oslo', 'rogaland': 'rogaland', 'troms og finnmark': 'troms_og_finnmark', 'trøndelag': 'trondelag', 'vestfold og telemark': 'vestfold_og_telemark', ...}<br>
+<strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table>
+</body></html>
