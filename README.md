@@ -1,6 +1,7 @@
 # Assignment 6
 
 Scripts and data for visualizing corona statistics in Norwegian counties. Also includes a Flask app to host these statistics.
+This app was written for a university assignment.
 
 ## Dependencies
 
